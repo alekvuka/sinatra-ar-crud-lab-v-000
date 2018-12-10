@@ -9,5 +9,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    erb :new
+  end
+
+  post 'article' do
+    @article = Article.create(title: params[:title], content: params[:content])
+    #erb :'/articles/:id'
   end
 end
